@@ -1,0 +1,41 @@
+#header {
+  height: 80px;
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+  background: linear-gradient(rgb(0, 0, 0), 10%, transparent);
+}
+
+#header .logo h1 {
+  margin: 0;
+  padding: 4px 0;
+  line-height: 1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+#header .logo h1 a:hover {
+  color: #28c6a9;
+  text-decoration: none;
+}
+
+.log {
+  height:40px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  font-family: 'KoHo';
+  font-size: 17px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.navbar-nav {
+  flex-grow: 0;
+}
