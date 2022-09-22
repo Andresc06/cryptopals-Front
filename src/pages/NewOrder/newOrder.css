@@ -1,0 +1,11 @@
+.background-order {
+    font-family: 'Roboto';
+    justify-content: center;
+    background: url(../../assets/background-sell-money.jpg) no-repeat fixed center; background-size: cover;
+    position: relative;
+  }
+
+  .background-transparent {
+    background: transparent;
+    border: 0px;
+  }
