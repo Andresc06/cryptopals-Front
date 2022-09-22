@@ -1,27 +1,22 @@
-/*LOGIN AND REGISTER CARD*/
+/*REGISTER CARD*/
 
 .mess {
-    font-family: 'KoHo', cursive;
     font-size: 11px;
-    text-align: center;
 }
-
-.card {
-    cursor: pointer;
-    background-color: #131a21;
-    border: 3px solid #A7ABAD;
-    box-shadow: 20px 20px 0px 2px #3c4349;
-    transition-duration: .7s;
-  }
 
   .ro {
     height: 85vh;
+    background-color: #131a21;
+    box-shadow: 20px 20px 0px 2px #3c4349;
+    cursor: pointer;
+    border: 5px solid #B00033;
+    transition-duration: .7s;
   }
-  
-  .card:hover {
-    transition: width, height, box-shadow, border, font-size;
-    border: 4px solid #FFF;
+
+  .ro:hover {
     box-shadow: -30px 30px 3px -10px #3c4349;
+    transition: width, height, box-shadow, border, font-size;
+    border: 3px solid #FFF;
     transition-duration: .7s;
     font-size: 115%;
   }
