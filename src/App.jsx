@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import { HomePage, NotFoundPage, Register, Login, Dashboard, ForgotPassword, SendPayment, Movements, LoadAccount, NewOrder } from "./pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ContextProvider } from "./context/userContext";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <div>
+      <ContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<HomePage />} />
@@ -114,6 +116,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
+      </ContextProvider>
     </div>
   );
 }

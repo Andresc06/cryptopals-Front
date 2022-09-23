@@ -2,12 +2,17 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import Navbar from '../../components/Navbar';
-import './movements.css'
+import { Sidebar } from '../../components/sidebar/Sidebar';
+import './movements.css';
+import { UserContext } from "../../context/userContext";
+import { useContext } from 'react';
 
 
 export function Movements({setAuth}) {
 
     let email = localStorage.email;
+    const [show, setshow] = useState(false);
+    const { user } = useContext(UserContext);
 
     const [payments, setPayments] = useState([])
 
@@ -40,8 +45,8 @@ export function Movements({setAuth}) {
 
     return (
         <div>
-            <Navbar />
-            <div className="p-5 background-movements">
+            <Sidebar show={show} setshow={setshow} user={user} />
+            <div className="p-5 background-movements mt-2">
             <h1 className='display-4 text-center text-white position-relative movements my-3'>Movements</h1>
             <div className='card my-4 tab'>
                 <div className='-block d-sm-none mobile'>

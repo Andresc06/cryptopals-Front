@@ -1,11 +1,107 @@
 .background-order {
     font-family: 'Roboto';
     justify-content: center;
-    background: url(../../assets/background-sell-money.jpg) no-repeat fixed center; background-size: cover;
+    background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
     position: relative;
+    height: 100vh;
+  }
+
+  .background-order2 {
+    font-family: 'Roboto';
+    justify-content: center;
+    background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
+    position: relative;
+    height: 100vh;
   }
 
   .background-transparent {
     background: transparent;
     border: 0px;
   }
+
+  .new-sell:hover {
+    box-shadow: -30px 30px 3px -10px #737373;
+    transition: box-shadow, border;
+    border: 3px solid rgb(207, 179, 0);
+    transition-duration: .7s;
+  }
+  
+    .new-sell {
+      width: 40vw;
+      margin: 0px auto;
+      background-color: #1a0505;
+      cursor: pointer;
+      border: 5px solid rgb(207, 179, 0);
+      transition-duration: .7s;
+    }
+
+    .sell {
+      text-shadow: #d7b300 2px 2px;
+      color: #FFF;
+    }
+
+    .buy {
+      text-shadow: #2a9400 2px 2px;
+      color: #FFF;
+    }
+
+    .new-buy:hover {
+      box-shadow: -30px 30px 3px -10px #737373;
+      transition: box-shadow, border;
+      border: 3px solid rgb(35, 122, 0);
+      transition-duration: .7s;
+    }
+    
+      .new-buy {
+        width: 40vw;
+        margin: 0px auto;
+        background-color: #1a0505;
+        cursor: pointer;
+        border: 5px solid rgb(35, 122, 0);
+        transition-duration: .7s;
+      }
+
+      .orders {
+        text-align: center;
+        align-items: center;
+        padding-left: 15%;
+        font-size: 1.5em;
+        font-family: 'KoHo';
+        font-weight: bold; 
+        text-shadow: -1.5px -1.5px 1.5px #000, 1.5px 1.5px 1.5px #000, -1.5px 1.5px 1.5px #000, 1.5px -1.5px 1.5px #000;
+      }
+
+
+      @media (max-width: 1000px) {
+        
+        .new-buy, .new-sell {
+
+          font-size: 65%;
+        }
+
+        .background-order2 {
+          height: max-content;
+        }
+
+      }
+
+      @media (max-width: 675px) {
+
+        .new-buy, .new-sell {
+          font-size: 60%;
+          width: 70vw;
+        }
+        
+
+        .orders {
+          margin-left: 18vw;
+          margin-top: 20px;
+        }
+      }
+
+      @media (min-width: 390px) {
+        
+        .background-order2 {
+          height: 100vh;
+        }
+      }

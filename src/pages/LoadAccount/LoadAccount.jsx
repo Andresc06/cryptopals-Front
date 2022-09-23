@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schemaLoadAccount } from '../../utils/schema';
 import toast, { Toaster } from 'react-hot-toast';
@@ -9,10 +8,15 @@ import { useNavigate } from "react-router-dom";
 import USDT from "../../assets/usdt.svg";
 import BUSD from "../../assets/busd.png"
 import './loadAccount.css';
+import { Sidebar } from '../../components/sidebar/Sidebar';
+import { UserContext } from "../../context/userContext";
+import { useContext } from 'react';
 
 export function LoadAccount() {
 
     let navigate = useNavigate();
+    const [show, setshow] = useState(false);
+    const { user } = useContext(UserContext);
 
     const [loading, setloading] = useState(false);
 
@@ -108,7 +112,7 @@ export function LoadAccount() {
     };
     return (
         <div>
-            <Navbar />
+            <Sidebar show={show} setshow={setshow} user={user} />
             <div className="p-5 background-load">
                 <div className="card bg-dark col-sm-6 col-lg-3 p-3 mx-auto mt-5">
                     <h1 className="text-center load">Loading Account Form</h1>

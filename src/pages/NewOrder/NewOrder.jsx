@@ -3,10 +3,15 @@ import { NewBuy } from "../../components/Orders/newBuy";
 import { NewSell } from "../../components/Orders/newSell";
 import { useState } from "react";
 import './newOrder.css'
+import { Sidebar } from "../../components/sidebar/Sidebar";
+import { UserContext } from "../../context/userContext";
+import { useContext } from 'react';
 
 export function NewOrder({setAuth}) {
 
   const [side, setside] = useState('')
+  const [show, setshow] = useState(false);
+  const { user } = useContext(UserContext);
 
   const handleSide = (e) => {
     let element = e.target;
@@ -17,9 +22,11 @@ export function NewOrder({setAuth}) {
   };
 
     return (
-      <div className="background-order">
-        <div className="col text-center pt-5">
-          <div className="form-check form-check-inline">
+      <div>
+        <Sidebar show={show} setshow={setshow} user={user} />
+      <div className={side ? "background-order2 row mt-5 d-flex justify-content-between": "background-order row m-0 d-flex justify-content-between"}>
+        <div className="col orders d-flex text-center text-white">
+          <div className="form-check form-check-inline d-flex">
             <input
               className="form-check-input"
               type="radio"
@@ -27,9 +34,9 @@ export function NewOrder({setAuth}) {
               value="BUY"
               onChange={handleSide}
             />
-            <label className="form-check-label">BUY</label>
+            <label className="form-check-label ps-2">Buy</label>
           </div>
-          <div className="form-check form-check-inline">
+          <div className="form-check form-check-inline d-flex">
             <input
               className="form-check-input"
               type="radio"
@@ -37,13 +44,15 @@ export function NewOrder({setAuth}) {
               value="SELL"
               onChange={handleSide}
             />
-            <label className="form-check-label">SELL</label>
+            <label className="form-check-label ps-2">Sell</label>
           </div>
         </div>
-
-        {side == 'SELL' ? <NewSell /> : ""}
-        {side == 'BUY' ? <NewBuy /> : ""}
+          <div className="col d-flex m-5">
+          {side == 'SELL' ? <NewSell /> : ""}
+          {side == 'BUY' ? <NewBuy /> : ""}
+          </div>
         <Toaster position="bottom-right" reverseOrder={false} />
+      </div>
       </div>
     );
 }

@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { schemaOrder } from "../../utils/schema";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import ETH from "../../assets/eth.svg";
-import BNB from "../../assets/bnb.png";
-import BUSD from "../../assets/busd.png";
+import ETH from "../../assets/eth-order.png";
+import BNB from "../../assets/bnb-order.png";
+import BUSD from "../../assets/busd-order.png";
 import axios from "axios";
 
 export function NewBuy({setAuth}) {
@@ -195,19 +195,18 @@ export function NewBuy({setAuth}) {
   else message = currentCurrency;
 
     return (
-        <div className="m-4">
-        <div className="row">
+        <div className="row card new-buy">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <div className="row bg-light rounded m-3">
+              <div className="row bg-dark rounded m-3 text-white">
                 <div className="px-4 my-4">
-                  <h2 className="text-dark fw-bold text-center">Buy Cryptos from USDT</h2>
+                  <h2 className="text-center fst-italic buy">Buy Cryptos from USDT</h2>
                 </div>
                 <div className="px-4">
                   <div className="mb-4">
-                  <p className="text-dark fw-bold text-center">ETH: {ethPrice ? ethPrice + ' USDT' : ""}</p>
-                  <p className="text-dark fw-bold text-center">BNB: {bnbPrice ? bnbPrice + ' USDT' : ""}</p>
-                  <p className="text-dark fw-bold text-center">BUSD: {busdPrice ? busdPrice + ' USDT' : ""}</p>
+                  <p className="fw-bold text-center">ETH: {ethPrice ? ethPrice + ' USDT' : ""}</p>
+                  <p className="fw-bold text-center">BNB: {bnbPrice ? bnbPrice + ' USDT' : ""}</p>
+                  <p className="fw-bold text-center">BUSD: {busdPrice ? busdPrice + ' USDT' : ""}</p>
 
                     <div className="col text-center mt-4">
                       <div className="form-check form-check-inline">
@@ -219,7 +218,7 @@ export function NewBuy({setAuth}) {
                           onChange={handleCrypto}
                         />
                         <label className="form-check-label">ETH</label>
-                        <img className="img-fluid currency" src={ETH} />
+                        <img className="img-fluid currency rounded-circle" src={ETH} />
                       </div>
                       <div className="form-check form-check-inline">
                         <input
@@ -230,7 +229,7 @@ export function NewBuy({setAuth}) {
                           onChange={handleCrypto}
                         />
                         <label className="form-check-label">BUSD</label>
-                        <img className="img-fluid currency ms-2" src={BUSD} />
+                        <img className="img-fluid currency ms-2 rounded-circle" src={BUSD} />
                       </div>
                       <div className="form-check form-check-inline">
                         <input
@@ -241,7 +240,7 @@ export function NewBuy({setAuth}) {
                           onChange={handleCrypto}
                         />
                         <label className="form-check-label">BNB</label>
-                        <img className="img-fluid currency ms-2" src={BNB} />
+                        <img className="img-fluid currency ms-2 rounded-circle" src={BNB} />
                       </div>
 
                       <div className="col m-3">
@@ -277,14 +276,14 @@ export function NewBuy({setAuth}) {
                 </div>
               </div>
 
-              <div className="bg-warning rounded p-2 mb-3 fst-italic text-center">
+              <div className="bg-secondary text-white rounded p-2 mb-3 me-5 ms-5 fst-italic text-center">
                 <small>
                   <span className="fw-bold">Warning:</span> The total order must be more than 10 USDT
                 </small>
               </div>
 
-              <div className="row d-grid">
-                <button className="btn btn-success text-white fs-4 mb-2" id="button2" disabled>
+              <div className="d-grid m-3 mt-5">
+                <button className="btn btn-success fs-4" id="button2" disabled>
                   {loading ? (
                     <span
                       className="spinner-border spinner-border-sm"
@@ -296,7 +295,6 @@ export function NewBuy({setAuth}) {
               </div>
             </div>
           </form>
-        </div>
             <Toaster 
             position="bottom-right"
             reverseOrder={false}

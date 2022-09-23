@@ -1,12 +1,15 @@
 import toast from 'react-hot-toast';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { schemaLogin } from '../utils/schema';
+import { UserContext } from '../context/userContext';
 
 const LoginForm = ({setAuth}) => {
 
     const [loading, setloading] = useState(false);
+
+    const { getUser } = useContext(UserContext)
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schemaLogin)
@@ -30,6 +33,8 @@ const LoginForm = ({setAuth}) => {
     
             // Se parsea y queda como un objeto
             const parseRes = await res.json();
+
+            const { user } = parseRes;
     
             
             if(parseRes.token) {
@@ -38,6 +43,7 @@ const LoginForm = ({setAuth}) => {
                 localStorage.setItem("email", parseRes.email);
                 // Se autoriza el user
                 setAuth(true);
+                getUser(user);
             } 
 
             
