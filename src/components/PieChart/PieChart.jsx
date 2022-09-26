@@ -14,7 +14,7 @@ export function PieChart({ user, userData }) {
         labels,
         datasets: [
             {
-                label: 'algo',
+                label: 'thing',
                 data: mappedData,
                 backgroundColor: colors,
                 borederColors: borederColors,
@@ -26,8 +26,8 @@ export function PieChart({ user, userData }) {
     return (
         <>
             <aside className={styles.pieContainer}>
-                <h4 className={styles.pieHeader}>Representación gráfica de sus activos</h4>
-                <Pie data={data} />
+                <h4 className={styles.pieHeader}>Graphic Representation of your actives</h4>
+                <Pie data={data}/>
             </aside>
         </>
     );

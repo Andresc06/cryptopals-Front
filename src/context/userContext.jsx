@@ -14,7 +14,6 @@ export const ContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(userReducer, initialState);
 
     const getUser = user => {
-        // console.log(user);
         dispatch({
             type: 'FETCH_USER',
             payload: {
@@ -25,7 +24,6 @@ export const ContextProvider = ({ children }) => {
 
     const createDataSets = user => {
         const { wallet } = user;
-        console.log(wallet);
 
         const dataSets = labels.map((label, k) => {
             const data = [wallet[0][label]];

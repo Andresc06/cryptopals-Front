@@ -4,14 +4,18 @@
     background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
     position: relative;
     height: 100vh;
+    margin-top: 70px;
+    width: 100vw;
   }
 
   .background-order2 {
     font-family: 'Roboto';
     justify-content: center;
-    background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
+    background: url(../../assets/background-movements.jpg) no-repeat center; background-size: cover;
     position: relative;
     height: 100vh;
+    margin-top: 70px;
+    width: 100vw;
   }
 
   .background-transparent {
@@ -27,7 +31,7 @@
   }
   
     .new-sell {
-      width: 40vw;
+      width: 30vw;
       margin: 0px auto;
       background-color: #1a0505;
       cursor: pointer;
@@ -53,7 +57,7 @@
     }
     
       .new-buy {
-        width: 40vw;
+        width: 30vw;
         margin: 0px auto;
         background-color: #1a0505;
         cursor: pointer;
@@ -97,6 +101,7 @@
           margin-left: 18vw;
           margin-top: 20px;
         }
+        
       }
 
       @media (min-width: 390px) {

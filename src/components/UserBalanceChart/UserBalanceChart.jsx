@@ -30,8 +30,8 @@ export function UserBalanceChart({ state, user, userData }) {
     return (
         <div className={styles.wrapper}>
             {/* <h1>hola {userState.user.name}</h1> */}
-            <div id='chartContainer' className={`${styles.chartContainer} ${state ? '' : styles.chartFull}`}>
-                <h5 className={styles.chartHeader}>Gráfico del balance del usuario</h5>
+            <div id='chartContainer' className={`${styles.chartContainer} ${state ? '' : styles.chartFull} text-center fst-italic`}>
+                <h5 className={styles.chartHeader}>Your Graphic Balance</h5>
                 <Bar options={options} data={dataSets} />;
             </div>
         </div>

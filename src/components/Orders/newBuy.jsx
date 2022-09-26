@@ -68,7 +68,7 @@ export function NewBuy({setAuth}) {
   const getData = async () => {
     //Request
     const response = await axios.get(
-      `http://localhost:8888/wallet/balance/${email}`
+      `https://cryptopals-backend.netlify.app/wallet/balance/${email}`
     );
     let data = response.data.wallet;
 
@@ -146,7 +146,7 @@ export function NewBuy({setAuth}) {
       setloading(true);
 
       // se hace el fetch para la comunicacion con el backend
-      const res = await fetch("http://localhost:8888/wallet/order", {
+      const res = await fetch("https://cryptopals-backend.netlify.app/wallet/order", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" }

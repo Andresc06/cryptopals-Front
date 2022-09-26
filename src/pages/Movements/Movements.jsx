@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import Navbar from '../../components/Navbar';
 import { Sidebar } from '../../components/sidebar/Sidebar';
 import './movements.css';
 import { UserContext } from "../../context/userContext";
@@ -19,7 +18,7 @@ export function Movements({setAuth}) {
     const getData = async () => {
         //Request
         const response = await axios.get(
-          `http://localhost:8888/wallet/payments/${email}`
+          `https://cryptopals-backend.netlify.app/wallet/payments/${email}`
         );
         
         let data = response.data.reverse();
@@ -33,7 +32,8 @@ export function Movements({setAuth}) {
               color: "#333",
               fontSize: "25px",
               fontFamily: "Shadows Into Light",
-            }
+            },
+            duration: 1000
         })
     
     };
@@ -117,6 +117,7 @@ export function Movements({setAuth}) {
             </div>
             </div>
             </div>
+            
             <Toaster 
             position="bottom-right"
             reverseOrder={false}

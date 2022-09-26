@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { MdSupervisedUserCircle, MdOutlineHistory, MdOutlinePayment, MdCached, MdMenu } from 'react-icons/md';
 import { RiCoinsFill } from 'react-icons/ri'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './sidebar.module.css';
+import Log from '../../assets/nav-bar_crypto.png'
 
 
 export function Sidebar({ show, setshow, user }) {
+
+    let navigate = useNavigate();
+
     const links = [
         {
             name: 'Dashboard',
@@ -31,12 +35,11 @@ export function Sidebar({ show, setshow, user }) {
             name: 'Load Account',
             icon: <MdCached />,
             address: '/dashboard/loadAccount'
-        },
+        }
     ];
 
     const handleToggle = () => {
         setshow(!show);
-        console.log(show);
     };
 
     return (
@@ -44,9 +47,13 @@ export function Sidebar({ show, setshow, user }) {
             <aside className={styles.topbar}>
                 <div className={styles.toggleContainer} onClick={handleToggle}>
                     <MdMenu className={styles.toggle} />
-                    <h3>CRYPTOPALS</h3>
+                    <h3 className='pt-2'>CRYPTOPALS</h3>
+                    <img src={Log} className="log" alt='CRYPTOPALS logo' />
                 </div>
-                {<h3>Hello, {user.name}</h3>}
+                <span className='d-flex'>
+                <h3 className='d-none d-lg-block d-md-block d-xl-block d-xxl-block'>Hello, {user.name}</h3>
+                <Link to="/login"><button className='btn btn-danger me-3'>Log Out</button></Link>
+                </span>
             </aside>
             <aside className={`${styles.sidebar} ${show ? styles.show : styles.hidde}`}>
                 <ul className={styles.sidebarNav}>

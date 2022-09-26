@@ -2,7 +2,9 @@
     padding: 20px 40px;
     margin: 28px auto 0 auto;
     width: 90vw;
-    background-color: #fff;
+    background-color: #18212a;
+    opacity: 0.9;
+    color: #fff;
     border-radius: 5px;
     min-height: 550px;
     align-self: flex-end;
@@ -11,7 +13,7 @@
 
 .row {
     width: 100%;
-    border-top: solid rgba(39, 44, 63, 0.3) 1px;
+    border-top: solid rgba(255, 255, 255, 0.6) 1px;
     height: 70px;
     display: flex;
     align-items: center;

@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <div>
         <header>
-            <nav  className="fixed-top d-flex align-items-center navbar navbar-expand-lg navbar-dark" id='header'>
+            <nav  className="fixed-top d-flex align-items-center navbar navbar-expand-lg" id='header'>
 
             <div className="container-fluid">
                 
@@ -24,9 +24,9 @@ const Navbar = () => {
 
                 <div className="navbar-nav collapse navbar-collapse" id="navbarNavAltMarkup">
 
-                    <Link className="nav-link me-4" to='/home'>Home</Link>
+                    <Link className="nav-link" to='/home'>Home</Link>
 
-                    <button className='btn btn-primary me-4 pt-0 pb-0'>
+                    <button className='btn btn-primary pt-0 pb-0'>
                     <Link className="nav-link fw-bold" to='/login'>Sign in</Link>
                     </button>
 

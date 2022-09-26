@@ -21,7 +21,7 @@ const RegisterForm = ({setAuth}) => {
             setloading(true);
 
             // se hace el fetch para la comunicacion con el backend
-            const res = await fetch("http://localhost:8888/auth/register", {
+            const res = await fetch("https://cryptopals-backend.netlify.app/auth/register", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" },

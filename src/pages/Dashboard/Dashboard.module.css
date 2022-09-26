@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.all {
+    background-color: #FFDEE9;
+    background: url(../../assets/blockchain-technology-background-gradient-blue.jpg) no-repeat fixed center; background-size: cover;
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .container {
+        padding-top: 30%;
+    }
+}

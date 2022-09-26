@@ -4,6 +4,7 @@ import { SendPaymentForm } from "../../components/SendPaymentForm";
 import { Sidebar } from "../../components/sidebar/Sidebar";
 import { UserContext } from "../../context/userContext";
 import { useContext, useState } from 'react';
+import Footer from '../../components/Footer/Footer';
 
 
 export function SendPayment({setAuth}) {
@@ -19,6 +20,7 @@ export function SendPayment({setAuth}) {
                     <SendPaymentForm setAuth={setAuth} className="payments"/>
                 </div>
             </div>
+            <Footer/>
             <Toaster 
             position="bottom-right"
             reverseOrder={false}

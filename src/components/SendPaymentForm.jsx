@@ -34,7 +34,7 @@ export function SendPaymentForm({setAuth}) {
   const getData = async () => {
     //Request
     const response = await axios.get(
-      `http://localhost:8888/wallet/balance/${email}`
+      `https://cryptopals-backend.netlify.app/wallet/balance/${email}`
     );
     //Con esta función estoy extrayendo el objeto data de la respuesta, y a su vez extrayendo el objeto user y a ese objeto le estoy extrayendo el array "assets", que es el que contiene la información que me interesa
     let data = response.data.wallet;
@@ -49,7 +49,8 @@ export function SendPaymentForm({setAuth}) {
         color: "#333",
         fontSize: "22px",
         fontFamily: "Shadows Into Light",
-      }
+      },
+      duration: 1000
     })
   };
 
@@ -101,7 +102,7 @@ export function SendPaymentForm({setAuth}) {
       setloading(true);
 
       // se hace el fetch para la comunicacion con el backend
-      const res = await fetch("http://localhost:8888/wallet/payment", {
+      const res = await fetch("https://cryptopals-backend.netlify.app/wallet/payment", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },

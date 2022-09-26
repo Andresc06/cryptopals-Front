@@ -1,8 +1,5 @@
 #header {
   height: 80px;
-  transition: all 0.5s;
-  z-index: 997;
-  transition: all 0.5s;
   background: linear-gradient(rgb(0, 0, 0), 10%, transparent);
 }
 
@@ -38,4 +35,38 @@
 
 .navbar-nav {
   flex-grow: 0;
+}
+
+@media (max-width: 992px) {
+
+  .navbar-nav button {
+    margin-top: 10px;
+    background-color: transparent;
+    border: transparent;
+  }
+
+  .navbar-nav {
+    margin-top: 12px;
+  }
+
+  .container-fluid {
+    padding: 0px;
+  }
+
+  #header {
+    height: 60px;
+  }
+
+  .navbar-nav, #header {
+    background: rgba(0,0,0,0.5);
+  }
+  
+}
+
+@media (min-width: 992px) {
+
+  .navbar-nav button {
+    margin: 0px 15px;
+  }
+  
 }

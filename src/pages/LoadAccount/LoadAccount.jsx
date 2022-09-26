@@ -11,12 +11,46 @@ import './loadAccount.css';
 import { Sidebar } from '../../components/sidebar/Sidebar';
 import { UserContext } from "../../context/userContext";
 import { useContext } from 'react';
+import { useEffect } from 'react';
+import Footer from '../../components/Footer/Footer';
 
 export function LoadAccount() {
 
     let navigate = useNavigate();
     const [show, setshow] = useState(false);
     const { user } = useContext(UserContext);
+
+    const getToast = () => {
+
+    
+        toast('You must transfer USDT/BUSD to our Binance account', {
+          icon: "🪙",
+          style: {
+            borderRadius: "5px",
+            background: "#fff",
+            color: "#333",
+            fontSize: "22px",
+            fontFamily: "Shadows Into Light",
+          },
+          duration: 2000
+        })
+
+        toast('Then, fill out this form with its data', {
+            icon: "📝",
+            style: {
+              borderRadius: "5px",
+              background: "#fff",
+              color: "#333",
+              fontSize: "22px",
+              fontFamily: "Shadows Into Light",
+            },
+            duration: 2000
+          })
+      };
+    
+      useEffect(() => {
+        getToast();
+      }, []);
 
     const [loading, setloading] = useState(false);
 
@@ -57,7 +91,7 @@ export function LoadAccount() {
             evt.preventDefault();
             setloading(true);
 
-            const res = await fetch('http://localhost:8888/wallet/loadaccount', {
+            const res = await fetch('https://cryptopals-backend.netlify.app/wallet/loadaccount', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: { 'Content-Type': 'application/json' },
@@ -110,6 +144,8 @@ export function LoadAccount() {
 
         }
     };
+
+
     return (
         <div>
             <Sidebar show={show} setshow={setshow} user={user} />
@@ -118,7 +154,10 @@ export function LoadAccount() {
                     <h1 className="text-center load">Loading Account Form</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         
-                    <p>In order to load your account we need you to fill out the following form:</p>
+                    <p>In order to load your account you need to transfer to the following <span className='text-warning'>Binance Pay account:</span></p>
+                    <p className='text-info text-center fst-italic'><bold>Email:</bold> andrescontreras370@gmail.com</p>
+
+                    <p>Then, you will have to fill out this form to verify your payment</p>
 
 
                         <div className='align-items-center'>
@@ -183,6 +222,8 @@ export function LoadAccount() {
                     </form>
                 </div>
             </div>
+
+            <Footer/>
 
             <Toaster 
             position="bottom-right"
