@@ -35,6 +35,21 @@ export function Movements({setAuth}) {
             },
             duration: 1000
         })
+
+        if(payments.length == 0) {
+
+            toast("You haven't made any movement yet", {
+                icon: "❓",
+                style: {
+                  borderRadius: "5px",
+                  background: "#fff",
+                  color: "#333",
+                  fontSize: "25px",
+                  fontFamily: "Shadows Into Light",
+                },
+                duration: 2000
+            })
+        }
     
     };
 
@@ -46,7 +61,7 @@ export function Movements({setAuth}) {
     return (
         <div>
             <Sidebar show={show} setshow={setshow} user={user} />
-            <div className="p-5 background-movements mt-2">
+            <div className={payments.length > 12 ? "p-5 background-movements-2 mt-2" : "p-5 background-movements mt-2"}>
             <h1 className='display-4 text-center text-white position-relative movements my-3'>Movements</h1>
             <div className='card my-4 tab'>
                 <div className='-block d-sm-none mobile'>
