@@ -1,0 +1,36 @@
+.pieContainer {
+    width: 35%;
+    background-color: rgb(247, 253, 254);
+    color: #0e1113;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    font-style: italic;
+    padding: 10px;
+    align-self: center;
+    margin-top: 8%;
+}
+
+.pieContainer canvas {
+    max-width: 100%;
+}
+
+.pieHeader {
+    display: inline-block;
+    text-align: center;
+    font-size: 26px;
+}
+
+@media (min-width: 768px) {
+    .pieContainer {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 614px) {
+    .pieContainer {
+        width: 80vw;
+        margin-bottom: 20px;
+    }
+}

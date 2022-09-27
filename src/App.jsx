@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
-import { HomePage, NotFoundPage, Register, Login, Dashboard, ForgotPassword, SendPayment, Movements, LoadAccount, NewOrder } from "./pages";
+import { HomePage, NotFoundPage, Register, Login, Dashboard, ForgotPassword, SendPayment, Movements, LoadAccount, NewOrder, ChangePhone } from "./pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ContextProvider } from "./context/userContext";
 
@@ -102,6 +102,17 @@ function App() {
             element={
               isAuthenticated ? (
                 <NewOrder setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+
+          <Route
+            path="/dashboard/changephone"
+            element={
+              isAuthenticated ? (
+                <ChangePhone setAuth={setAuth} />
               ) : (
                 <Navigate to="/login" />
               )
