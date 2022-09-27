@@ -91,7 +91,7 @@ export function LoadAccount() {
             evt.preventDefault();
             setloading(true);
 
-            const res = await fetch('https://cryptopals-backend.netlify.app/wallet/loadaccount', {
+            const res = await fetch('http://localhost:8888/wallet/loadaccount', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: { 'Content-Type': 'application/json' },
