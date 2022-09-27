@@ -83,12 +83,21 @@ const RegisterForm = ({setAuth}) => {
                         </p>
                         )}
 
-                        <label className="mt-2">Your Full Name</label>
+                        <label className="mt-2">Your Username</label>
                         <input className="form-control my-2" placeholder='Write your full name here' {...register('name')} name='name' />
                         
                         {errors.name && (
                         <p className="text-danger m-0 p-0 mess">
                             {errors.name.message}
+                        </p>
+                        )}
+
+                        <label className="mt-2">Your Phone Number <sub>Ex: +5841298765432</sub></label>
+                        <input className="form-control my-2" placeholder='+58XXXXXXXXXX' {...register('phone')} name='phone' />
+                        
+                        {errors.phone && (
+                        <p className="text-danger m-0 p-0 mess">
+                            {errors.phone.message}
                         </p>
                         )}
 
