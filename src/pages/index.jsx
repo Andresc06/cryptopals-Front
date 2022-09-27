@@ -8,3 +8,4 @@ export {SendPayment} from './SendPayment/SendPayment';
 export {Movements} from './Movements/Movements';
 export {LoadAccount} from './LoadAccount/LoadAccount';
 export {NewOrder} from './NewOrder/NewOrder';
+export {ChangePhone} from './ChangePhone/ChangePhone';
