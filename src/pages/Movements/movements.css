@@ -1,8 +1,17 @@
-.background-movements {
+  .background-movements {
     font-family: 'Roboto';
     justify-content: center;
     background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
     position: relative;
+    height: 100vh;
+  }
+
+  .background-movements-2 {
+    font-family: 'Roboto';
+    justify-content: center;
+    background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
+    position: relative;
+    height: max-content;
   }
 
   .movements {

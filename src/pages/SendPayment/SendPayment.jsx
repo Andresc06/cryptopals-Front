@@ -1,19 +1,26 @@
-import Navbar from "../../components/Navbar";
 import './sendPayment.css';
 import toast, { Toaster } from 'react-hot-toast';
 import { SendPaymentForm } from "../../components/SendPaymentForm";
+import { Sidebar } from "../../components/sidebar/Sidebar";
+import { UserContext } from "../../context/userContext";
+import { useContext, useState } from 'react';
+import Footer from '../../components/Footer/Footer';
 
 
 export function SendPayment({setAuth}) {
 
+    const [show, setshow] = useState(false);
+    const { user } = useContext(UserContext);
+
     return (
         <div>
-            <Navbar/>
-            <div className="p-5 background-sendPayment">
+            <Sidebar show={show} setshow={setshow} user={user} />
+            <div className="p-5 background-sendPayment mt-3">
                 <div className="my-5 card card-payment col-sm-6 col-lg-6 p-3 mx-auto">
                     <SendPaymentForm setAuth={setAuth} className="payments"/>
                 </div>
             </div>
+            <Footer/>
             <Toaster 
             position="bottom-right"
             reverseOrder={false}

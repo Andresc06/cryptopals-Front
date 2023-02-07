@@ -12,6 +12,10 @@ const schema = yup
       .required("Invalid password")
       .min(8, "The minimum length of your password is 8 characters"),
     name: yup.string().required("Please, enter your full name"),
+    phone: yup
+      .string()
+      .required("Please, enter a phone number")
+      .min(13, "Please enter a valid phone number"),
   })
   .required();
 
@@ -37,6 +41,17 @@ const schemaPayment = yup
       .email("Please, enter a valid email")
       .required("You cannot send payments if we don't have the receiver"),
     quantity: yup.number().required("Please, enter an amount").min(0),
+    code: yup.number("Please, enter a code").min(6, "Please  enter a code"),
+  })
+  .required();
+
+const schemaPhone = yup
+  .object()
+  .shape({
+    phone: yup
+      .string()
+      .required("Please, enter a phone number")
+      .min(13, "Please enter a valid phone number"),
   })
   .required();
 
@@ -62,4 +77,11 @@ const schemaOrder = yup
   })
   .required();
 
-export { schema, schemaLogin, schemaPayment, schemaLoadAccount, schemaOrder };
+export {
+  schema,
+  schemaLogin,
+  schemaPayment,
+  schemaLoadAccount,
+  schemaPhone,
+  schemaOrder,
+};

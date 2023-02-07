@@ -27,7 +27,7 @@ export function ForgotPassword() {
             evt.preventDefault();
             setloading(true);
 
-            const res = await fetch('http://localhost:8888/auth/changePassword', {
+            const res = await fetch('https://cryptopals-backend.netlify.app/auth/changePassword', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: { 'Content-Type': 'application/json' },

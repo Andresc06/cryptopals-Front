@@ -2,8 +2,9 @@ import "./App.css";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
-import { HomePage, NotFoundPage, Register, Login, Dashboard, ForgotPassword, SendPayment, Movements, LoadAccount, NewOrder } from "./pages";
+import { HomePage, NotFoundPage, Register, Login, Dashboard, ForgotPassword, SendPayment, Movements, LoadAccount, NewOrder, ChangePhone } from "./pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ContextProvider } from "./context/userContext";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
   async function isAuth() {
     try {
-      const response = await fetch("http://localhost:8888/auth/verify", {
+      const response = await fetch("https://cryptopals-backend.netlify.app/auth/verify", {
         method: "GET",
         headers: { token: localStorage.token },
       });
@@ -37,19 +38,15 @@ function App() {
 
   return (
     <div>
+      <ContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
 
           <Route
             path="/login"
-            element={
-              !isAuthenticated ? (
-                <Login setAuth={setAuth} />
-              ) : (
-                <Navigate to="/dashboard" />
-              )
-            }
+            element={<Login setAuth={setAuth} />}
           />
 
           <Route path="/register" element={<Register setAuth={setAuth} />} />
@@ -111,9 +108,21 @@ function App() {
             }
           />
 
+          <Route
+            path="/dashboard/changephone"
+            element={
+              isAuthenticated ? (
+                <ChangePhone setAuth={setAuth} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
+      </ContextProvider>
     </div>
   );
 }

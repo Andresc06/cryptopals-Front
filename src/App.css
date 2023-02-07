@@ -7,6 +7,25 @@
   text-align: center;
 }
 
+.background-not-found {
+  background: url('./assets/abstract_bokeh_lights_background.jpg') center no-repeat;
+  height: 100vh;
+}
+
+.but {
+  margin: 20px auto;
+}
+
+.but a:hover {
+  color: #000;
+}
+
+
+.div-not {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 .pages {

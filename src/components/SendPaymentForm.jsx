@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState, useEffect } from "react";
 import { schemaPayment } from "../utils/schema";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import ETH from "../assets/eth.svg";
 import USDT from "../assets/usdt.svg";
@@ -34,7 +34,7 @@ export function SendPaymentForm({setAuth}) {
   const getData = async () => {
     //Request
     const response = await axios.get(
-      `http://localhost:8888/wallet/balance/${email}`
+      `https://cryptopals-backend.netlify.app/wallet/balance/${email}`
     );
     //Con esta función estoy extrayendo el objeto data de la respuesta, y a su vez extrayendo el objeto user y a ese objeto le estoy extrayendo el array "assets", que es el que contiene la información que me interesa
     let data = response.data.wallet;
@@ -49,7 +49,8 @@ export function SendPaymentForm({setAuth}) {
         color: "#333",
         fontSize: "22px",
         fontFamily: "Shadows Into Light",
-      }
+      },
+      duration: 1000
     })
   };
 
@@ -101,7 +102,7 @@ export function SendPaymentForm({setAuth}) {
       setloading(true);
 
       // se hace el fetch para la comunicacion con el backend
-      const res = await fetch("http://localhost:8888/wallet/payment", {
+      const res = await fetch("https://cryptopals-backend.netlify.app/wallet/payment", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
@@ -163,6 +164,8 @@ export function SendPaymentForm({setAuth}) {
     if (element.checked) setcurrentCurrency(element.value);
   };
 
+  let link = `https://cryptopals-backend.netlify.app/wallet/msgsend/${email}`
+
     return (
         <div className="m-4">
         <p className="h4 text-center text-white">Transactions</p>
@@ -199,7 +202,21 @@ export function SendPaymentForm({setAuth}) {
                   <div className="mb-4">
 
                     <div className="mb-1">
-                      <label className="text-muted">Email Receiver</label>
+                      
+                      <label className="text-muted">Temporal Code</label>
+                      <div className="d-flex mb-2">
+                      <input
+                        className="form-control w-75"
+                        {...register("code")}
+                        name="code"
+                        placeholder="XXXXXX"
+                      />
+                      <a className="btn btn-outline-warning w-50 ms-3" href={link} target="_blank" role="button">Get Code</a>
+                      </div>
+                      <Link to='/dashboard/changephone' className='text-decoration-none text-danger mt-2'>Do you need to change your phone number?</Link><br/>
+                
+
+                      <label className="text-muted mt-3">Email Receiver</label>
                       <input
                         className="form-control form-pay"
                         {...register("receiver")}

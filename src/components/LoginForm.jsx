@@ -1,12 +1,18 @@
 import toast from 'react-hot-toast';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { schemaLogin } from '../utils/schema';
+import { UserContext } from '../context/userContext';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({setAuth}) => {
 
+    let navigate = useNavigate();
+
     const [loading, setloading] = useState(false);
+
+    const { getUser } = useContext(UserContext)
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schemaLogin)
@@ -20,7 +26,7 @@ const LoginForm = ({setAuth}) => {
             setloading(true);
 
             // se hace el fetch para la comunicacion con el backend
-            const res = await fetch("http://localhost:8888/auth/login", {
+            const res = await fetch("https://cryptopals-backend.netlify.app/auth/login", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: { "Content-Type": "application/json" },
@@ -30,6 +36,8 @@ const LoginForm = ({setAuth}) => {
     
             // Se parsea y queda como un objeto
             const parseRes = await res.json();
+
+            const { user } = parseRes;
     
             
             if(parseRes.token) {
@@ -38,6 +46,8 @@ const LoginForm = ({setAuth}) => {
                 localStorage.setItem("email", parseRes.email);
                 // Se autoriza el user
                 setAuth(true);
+                getUser(user);
+                navigate("/dashboard")
             } 
 
             
@@ -50,17 +60,6 @@ const LoginForm = ({setAuth}) => {
             }
 
             setloading(false);
-
-            toast('Hello Cryptopal!!', {
-                icon: '👋',
-                style: {
-                    borderRadius: '5px',
-                    background: '#333',
-                    color: '#fff',
-                    fontSize: '22px',
-                    fontFamily: 'Shadows Into Light'
-                },
-            });
             
     
         } catch (errors) {
@@ -89,6 +88,17 @@ const LoginForm = ({setAuth}) => {
 
         
       };
+
+      const removeLocal = () => {
+        //Request
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+
+      };
+    
+      useEffect(() => {
+        removeLocal();
+      }, []);
 
     return (
         <div>

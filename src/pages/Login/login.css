@@ -58,3 +58,10 @@
       width: 25%;
     }
   }
+
+  @media (max-width: 1200px) {
+
+    .lo {
+      height: 55vh;
+    }
+  }
