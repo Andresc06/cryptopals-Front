@@ -35,15 +35,15 @@ that we had (less than two months), I really enjoyed the experience using the BI
 ### Screenshoots
 
 <h4>Home</h4>
-<img src="img-readme/home.jpg" width='600px'/>
+<img src="../img-readme/home.jpg" width='600px'/>
 <h4>Dashboard</h4>
-<img src="img-readme/dashboard.jpg" width='600px'/>
+<img src="../img-readme/dashboard.jpg" width='600px'/>
 <h4>Buy Cryptos</h4>
-<img src="img-readme/buy.jpg" width='600px'/>
+<img src="../img-readme/buy.jpg" width='600px'/>
 <h4>Transfer (with MSG verification)</h4>
-<img src="img-readme/send.jpg" width='600px'/>
+<img src="../img-readme/send.jpg" width='600px'/>
 <h4>Load Account</h4>
-<img src="img-readme/load.jpg" width='600px'/>
+<img src="../img-readme/load.jpg" width='600px'/>
 
 # Functions
 
@@ -54,6 +54,12 @@ that we had (less than two months), I really enjoyed the experience using the BI
 - [x] Transfer money between Criptopals' accounts with a message verification (MSG verification).
 - [x] Show a dashboard page the user's balance.
 - [x] Show the Crypto movements of the user.
+
+---
+
+## ¿Do you want to contribute? 📎🚩
+
+In the docs/ folder you will get the [CODE_OF_CONDUCT.md](https://github.com/Andresc06/cryptopals-Front/tree/main/docs/CODE_OF_CONDUCT.md) as well as the [PULL_REQUEST_TEMPLATE.md](https://github.com/Andresc06/cryptopals-Front/tree/main/docs/PULL_REQUEST_TEMPLATE.md) for our code of conduct and contribution process.
 
 ### Visit the Backend 👀
 
