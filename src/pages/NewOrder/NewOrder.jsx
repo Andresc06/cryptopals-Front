@@ -46,8 +46,8 @@ useEffect(() => {
     return (
       <div>
         <Sidebar show={show} setshow={setshow} user={user} />
-      <div className={side ? "background-order2 row d-flex justify-content-between": "background-order row m-0 d-flex justify-content-between"}>
-        <div className="col orders d-flex text-center text-white">
+      <div className={side ? "background-order2 row": "background-order row m-0"}>
+        <div className="col orders d-flex text-white">
           <div className="form-check form-check-inline d-flex">
             <input
               className="form-check-input"

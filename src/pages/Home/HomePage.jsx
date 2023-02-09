@@ -135,7 +135,7 @@ export function HomePage() {
             <p className='text-warning'>+58 412 686 9854</p>
           </div>
 
-          <iframe className='border border-3 border-success' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.766689062762!2d-71.6106944852671!3d10.675209292390235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899988b4e8c42b%3A0xa8eb84fb4811274f!2sAIRTEK!5e0!3m2!1ses!2sve!4v1664154603534!5m2!1ses!2sve" width="100%" height="450" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className='border border-3 border-warning' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.766689062762!2d-71.6106944852671!3d10.675209292390235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899988b4e8c42b%3A0xa8eb84fb4811274f!2sAIRTEK!5e0!3m2!1ses!2sve!4v1664154603534!5m2!1ses!2sve" width="100%" height="450" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
 

@@ -276,9 +276,6 @@ display: inline-block;
   margin-left: 12px;
 }
 
-/*--------------------------------------------------------------
-# CONTACT
---------------------------------------------------------------*/
 
 .contact {
   background: url(../../assets/background-2.png) no-repeat center;
@@ -309,6 +306,15 @@ display: inline-block;
 
 .text-info {
   margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+a:hover {
+  color: #47b2e4;
 }
 
 /*--------------------------------------------------------------

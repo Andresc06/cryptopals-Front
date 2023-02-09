@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import './cryptos.css'
 
 const Cryptos = () => {
 
@@ -42,14 +41,14 @@ const Cryptos = () => {
 
     return (
     <div>
-        <div className="row p-5">
-            <h2 className='text-white fst-italic text-center mb-3'>Actual Cryptos' Prices</h2>
+        <div className="row p-3">
+            <h2 className='text-white mb-3'>Actual Cryptocoins Prices</h2>
             <div className="col-sm-4">
                 <div className="card shadow-lg p-3 mb-5 bg-body rounded">
                 <div className="card-body">
                     <h5 className="card-title">ETHEREUM</h5>
                     <span className='text-info'>{ethPrices ? ethPrices + ' USD' : ""}</span>
-                    <p className="card-text descr">Among cryptocurrencies, ether is second only to bitcoin in market capitalization.</p>
+                    <p className="card-text">Among cryptocurrencies, ether is second only to bitcoin in market capitalization.</p>
                     <Link to='/dashboard/order'><a href="#" className="btn btn-primary">Buy ETH</a></Link>
                 </div>
                 </div>
@@ -59,7 +58,7 @@ const Cryptos = () => {
                 <div className="card-body">
                     <h5 className="card-title">BNB</h5>
                     <span className='text-info'>{bnbPrices ? bnbPrices + ' USD' : ""}</span>
-                    <p className="card-text descr">It has multiple forms of utility, essentially being the underlying gas that powers the Binance Ecosystem.</p>
+                    <p className="card-text">It has multiple forms of utility, essentially being the underlying gas that powers the Binance Ecosystem.</p>
                     <Link to='/dashboard/order'><a href="#" className="btn btn-primary">Buy BNB</a></Link>
                 </div>
                 </div>
@@ -69,8 +68,8 @@ const Cryptos = () => {
                 <div className="card-body">
                     <h5 className="card-title">BITCOIN</h5>
                     <span className='text-info'>{btcPrices ? btcPrices + ' USD' : ""}</span>
-                    <p className="card-text descr">it's a universal currency that's not controlled by any government and it exists in a limited supply.</p>
-                    <Link to='/dashboard/order'><button className="btn btn-primary" disabled>Buy BTC</button></Link>
+                    <p className="card-text">it's a universal currency that's not controlled by any government and it exists in a limited supply.</p>
+                    <Link to='/dashboard/order'><button className="btn btn-danger" disabled>Buy BTC</button></Link>
                 </div>
                 </div>
             </div>

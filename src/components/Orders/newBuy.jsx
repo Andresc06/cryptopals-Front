@@ -282,8 +282,8 @@ export function NewBuy({setAuth}) {
                 </small>
               </div>
 
-              <div className="d-grid m-3 mt-5">
-                <button className="btn btn-success fs-4" id="button2" disabled>
+              <div className="d-grid my-3">
+                <button className="btn btn-success fs-4 fw-bold fst-italic" id="button2" disabled>
                   {loading ? (
                     <span
                       className="spinner-border spinner-border-sm"

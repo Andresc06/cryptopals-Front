@@ -1,27 +1,22 @@
 .activityLog {
     padding: 20px 40px;
-    margin: 28px auto 0 auto;
+    margin: 28px auto;
     width: 90vw;
     background-color: #18212a;
     opacity: 0.9;
     color: #fff;
-    border-radius: 5px;
-    min-height: 550px;
-    align-self: flex-end;
-    box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    border-radius: 20px;
+    min-height: 100%;
 }
 
 .row {
-    width: 100%;
-    border-top: solid rgba(255, 255, 255, 0.6) 1px;
-    height: 70px;
+    height: 5rem;
     display: flex;
     align-items: center;
+    border-top: solid rgba(255, 255, 255, 0.6) 1px;
 }
 
 .legend {
-    width: 100%;
-    height: 40px;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -51,5 +46,5 @@
 }
 
 .row:last-of-type {
-    border-bottom: solid rgba(39, 44, 63, 0.3) 1px;
+    border-bottom: solid rgba(255, 255, 255, 0.6) 1px;
 }

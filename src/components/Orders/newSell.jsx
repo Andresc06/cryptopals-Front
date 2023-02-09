@@ -200,10 +200,10 @@ export function NewSell({setAuth}) {
   else message = currentCurrency;
 
     return (
-        <div className="row card new-sell">
+        <div className="new-sell">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <div className="row bg-dark rounded m-3 text-white">
+              <div className="bg-dark rounded m-3 text-white">
                 <div className="px-4 my-4">
                   <h2 className="text-center fst-italic sell">Sell Cryptos to USDT</h2>
                 </div>
@@ -213,7 +213,7 @@ export function NewSell({setAuth}) {
                   <p className="fw-bold text-center">BNB: {bnbPrice ? bnbPrice + ' USDT' : ""}</p>
                   <p className="fw-bold text-center">BUSD: {busdPrice ? busdPrice + ' USDT' : ""}</p>
 
-                    <div className="col text-center mt-4">
+                    <div className="text-center mt-4">
                       <div className="form-check form-check-inline">
                         <input
                           className="form-check-input"
@@ -287,8 +287,8 @@ export function NewSell({setAuth}) {
                 </small>
               </div>
 
-              <div className="d-grid m-3 mt-5">
-                <button className="btn btn-warning fs-4" id="button" disabled>
+              <div className="d-grid my-3 m-2">
+                <button className="btn btn-warning fs-4 fw-bold fst-italic" id="button" disabled>
                   {loading ? (
                     <span
                       className="spinner-border spinner-border-sm"
