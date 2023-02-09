@@ -4,9 +4,9 @@ export function ActivityLog({ user }) {
 
     
     return (
-        <div className='d-none d-sm-block mb-5'>
+        <div className='d-none d-sm-block mb-2'>
             <article className={styles.activityLog}>
-                <h3 className='text-center p-3 fs-1 fst-italic'>Your lastest transactions</h3>
+                <h3 className='text-center fs-1 fst-italic'>Your lastest transactions</h3>
                 {!user.payments ? (
                     <h2>Loading..</h2>
                 ) : (

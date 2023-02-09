@@ -1,67 +1,61 @@
-  .background-movements {
-    font-family: 'Roboto';
-    justify-content: center;
-    background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
-    position: relative;
-    height: 100vh;
-  }
+.background-movements {
+  font-family: 'Roboto';
+  justify-content: center;
+  background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
+  position: relative;
+  height: 100vh;
+}
 
-  .background-movements-2 {
-    font-family: 'Roboto';
-    justify-content: center;
-    background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
-    position: relative;
-    height: max-content;
+.background-movements-2 {
+  font-family: 'Roboto';
+  justify-content: center;
+  background: url(../../assets/background-movements.jpg) no-repeat fixed center; background-size: cover;
+  position: relative;
+  height: max-content;
+}
+
+.movements {
+  font-style: italic;
+  text-shadow: #1d6592 2px 4px;
+}
+
+.background-movements:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: pay 10s alternate infinite;
+}
+
+.tab {
+  border: 5px solid #212F3C;
+  border-radius: 10px;
+}
+
+@media (max-width:798px) {
+  .tab {
+      font-size: 60%;
+  }
+}
+
+@media (max-width:575px) {
+  
+  .mobile {
+      margin: 0 10px;
+      font-size: 3vw;
   }
 
   .movements {
-    font-style: italic;
-    text-shadow: #1d6592 2px 4px;
+      font-size: 10vw;
   }
 
-  .background-movements:before {
-    content:'';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    animation: pay 10s alternate infinite;
+  .content {
+      padding: 8px;
+      border: 0.5px solid black;
+      font-family: 'KoHo', sans-serif;
+      font-weight: bold;
   }
-
-  .tab {
-    border: 5px solid #212F3C;
-    border-radius: 10px;
-  }
-
-  @media (max-width:798px) {
-    .tab {
-        font-size: 70%;
-    }
-  }
-
-  @media (max-width:621px) {
-    .tab {
-        font-size: 60%;
-    }
-  }
-
-  @media (max-width:575px) {
-    
-    .mobile {
-        margin: 0 10px;
-        font-size: 3vw;
-    }
-
-    .movements {
-        font-size: 10vw;
-    }
-
-    .content {
-        padding: 8px;
-        border: 0.5px solid black;
-        font-family: 'KoHo', sans-serif;
-        font-weight: bold;
-    }
-  }
+}
 

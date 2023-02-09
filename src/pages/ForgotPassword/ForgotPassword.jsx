@@ -75,13 +75,13 @@ export function ForgotPassword() {
         <div>
             <Navbar />
             <div className="p-5 background-forgot">
-                <div className="card so col-sm-6 col-lg-3 p-3 mx-auto mt-5">
-                    <h1 className="text-center title">¿Olvidaste tu contraseña?</h1>
+                <div className="card-change p-2">
+                    <h3 className="title-forgot">¿Olvidaste tu contraseña?</h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         
                         <label>Email</label>
                         {errors.email && 
-                        <span className="text-danger m-0 p-0 mess">
+                        <span className="text-danger mess">
                             {errors.email.message}
                         </span>}
                         <input className="form-control my-2" {...register('email')} placeholder='Write your email here' />
@@ -91,7 +91,7 @@ export function ForgotPassword() {
                         
                         <label className="mt-3">Your new password</label>
                         {errors.password && (
-                        <span className="text-danger m-0 p-0 mess">
+                        <span className="text-danger mess">
                             {errors.password.message}
                         </span>
                         )}
@@ -102,8 +102,8 @@ export function ForgotPassword() {
                         
                         
 
-                        <div className="d-grid col-9 position-absolute bottom-0 mb-4 start-50 translate-middle-x">
-                        <button className="btn btn-light fs-4">
+                        <div className="center-btn">
+                        <button className="btn btn-light fs-4 fw-bold fst-italic submit-btn">
                         {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Change Password"}
                         </button>
                         </div>

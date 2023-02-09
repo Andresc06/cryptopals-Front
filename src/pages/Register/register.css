@@ -1,52 +1,43 @@
-/*REGISTER CARD*/
+/*--------------------------------------------------------------
+# Register Page
+--------------------------------------------------------------*/
 
-.mess {
-    font-size: 11px;
+.register {
+  background-color: #131a21;
+  border: 5px solid #B00033;
 }
 
-  .ro {
-    height: 85vh;
-    background-color: #131a21;
-    box-shadow: 20px 20px 0px 2px #3c4349;
-    cursor: pointer;
-    border: 5px solid #B00033;
-    transition-duration: .7s;
-  }
+.register:hover {
+  box-shadow: -30px 30px 3px -10px #3c4349;
+}
 
-  .ro:hover {
-    box-shadow: -30px 30px 3px -10px #3c4349;
-    transition: width, height, box-shadow, border, font-size;
-    border: 3px solid #FFF;
-    transition-duration: .7s;
-    font-size: 115%;
-  }
+#reg-title {
+  color: #ffdd00;
+}
+
     
-  .background-register {
-    width: 100vw;
-    height: 100vh;
-    color: #fff;
-    font-family: 'Teko';
-    justify-content: center;
-    background: url(../../assets/back-register.webp) no-repeat fixed center; background-size: cover;
-    position: relative;
-  }
+.background-register {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: url(../../assets/back-register.webp) no-repeat center;
+}
 
-  .background-register:before {
-    content:'';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    animation: AnimateBG 10s alternate infinite;
-    background-color: rgba(0,0,0,0.5);
-  }
+.background-register:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: AnimateBG 10s alternate infinite;
+  background-color: rgba(0,0,0,0.5);
+}
 
-
-  .loginLink {
-    color: #fcafca;
-    font-size: 14px;
-  }
+.loginLink {
+  color: #fcafca;
+}
 
 @keyframes AnimateBG { 
   0%{background-color:rgba(0,0,0,0.4)}
@@ -55,14 +46,9 @@
   100%{background-color:rgba(0,0,0,0.3)}
 }
 
-  
-  .title {
-    text-shadow: 2px 2px 0px #000;
-  }
-  
-  @media (max-width: 1200px) {
+@media (max-width: 576px) {
 
-    .ro {
-      height: 70vh;
-    }
+  .register {
+    font-size: 60%;
   }
+}
