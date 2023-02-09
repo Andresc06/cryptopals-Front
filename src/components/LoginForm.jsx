@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useContext, useEffect, useState } from "react";
 import { schemaLogin } from '../utils/schema';
 import { UserContext } from '../context/userContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginForm = ({setAuth}) => {
 
@@ -104,7 +104,7 @@ const LoginForm = ({setAuth}) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                         
-                        <label className="mt-2">Your email</label>
+                        <label className="label-form">Your email</label>
                         <input className="form-control my-2" placeholder='Write your email here' {...register('email')} name='email' />
 
                         {errors.email && (
@@ -113,7 +113,7 @@ const LoginForm = ({setAuth}) => {
                         </p>
                         )}
                         
-                        <label className="mt-2">Your password</label>
+                        <label className="label-form">Your password</label>
                         <input className="form-control my-2" type='password' placeholder='Write your password here' {...register('password')} name='password' />
                         
                         {errors.password && (
@@ -122,10 +122,13 @@ const LoginForm = ({setAuth}) => {
                         </p>
                         )}
 
-                        <div className="d-grid col-9 position-absolute bottom-0 mb-4 start-50 translate-middle-x">
-                        <button className="btn btn-primary fs-4">
-                        {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Login"}
-                        </button>
+                        <Link to='/forgotPassword' className="text-decoration-none useful-link text-danger">Forgot your password?</Link>
+                        <Link to='/register' className="text-decoration-none useful-link text-warning">Don't have an account?</Link>
+
+                        <div className='center-btn'>
+                            <button className="btn btn-primary submit-btn">
+                            {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Login"}
+                            </button>
                         </div>
             </form>
         </div>

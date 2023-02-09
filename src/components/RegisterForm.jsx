@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from "react";
 import { schema } from '../utils/schema';
+import { Link } from 'react-router-dom';
 
 const RegisterForm = ({setAuth}) => {
 
@@ -65,44 +66,46 @@ const RegisterForm = ({setAuth}) => {
         <div>
         <form onSubmit={handleSubmit(onSubmit)}>
                         
-                        <label className="mt-2">Your email</label>
-                        <input className="form-control my-2" placeholder='Write your email here' {...register('email')} name='email' />
+                        <label className="label-form">Your email</label>
+                        <input className="form-control" placeholder='Write your email here' {...register('email')} name='email' />
 
                         {errors.email && (
-                        <p className="text-danger m-0 p-0 mess">
+                        <p className="text-danger my-2">
                             {errors.email.message}
                         </p>
                         )}
                         
-                        <label className="mt-2">Your password</label>
-                        <input className="form-control my-2" type='password' placeholder='Write your password here (min 8 char.)' {...register('password')} name='password' />
+                        <label className="label-form">Your password</label>
+                        <input className="form-control" type='password' placeholder='Write your password here (min 8 char.)' {...register('password')} name='password' />
                         
                         {errors.password && (
-                        <p className="text-danger m-0 p-0 mess">
+                        <p className="text-danger my-2">
                             {errors.password.message}
                         </p>
                         )}
 
-                        <label className="mt-2">Your Username</label>
-                        <input className="form-control my-2" placeholder='Write your full name here' {...register('name')} name='name' />
+                        <label className="label-form">Your Username</label>
+                        <input className="form-control" placeholder='Write your full name here' {...register('name')} name='name' />
                         
                         {errors.name && (
-                        <p className="text-danger m-0 p-0 mess">
+                        <p className="text-danger my-2">
                             {errors.name.message}
                         </p>
                         )}
 
-                        <label className="mt-2">Your Phone Number <sub>Ex: +5841298765432</sub></label>
-                        <input className="form-control my-2" placeholder='+58XXXXXXXXXX' {...register('phone')} name='phone' />
+                        <label className="label-form">Your Phone Number <sub>Ex: +017894561234</sub></label>
+                        <input className="form-control" placeholder='+01XXXXXXXXXX' {...register('phone')} name='phone' />
                         
                         {errors.phone && (
-                        <p className="text-danger m-0 p-0 mess">
+                        <p className="text-danger my-2">
                             {errors.phone.message}
                         </p>
                         )}
 
-                        <div className="d-grid col-9 position-absolute bottom-0 mb-4 start-50 translate-middle-x">
-                        <button className="btn btn-warning fs-4">
+                        <Link to='/login' className="text-decoration-none loginLink">Have already an account?</Link>
+
+                        <div className="center-btn">
+                        <button className="btn btn-warning submit-btn">
                         {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Register"}
                         </button>
                         </div>

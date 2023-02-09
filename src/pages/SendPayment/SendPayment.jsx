@@ -15,8 +15,8 @@ export function SendPayment({setAuth}) {
     return (
         <div>
             <Sidebar show={show} setshow={setshow} user={user} />
-            <div className="p-5 background-sendPayment mt-3">
-                <div className="my-5 card card-payment col-sm-6 col-lg-6 p-3 mx-auto">
+            <div className="p-5 background-sendPayment">
+                <div className="my-1 card-payment">
                     <SendPaymentForm setAuth={setAuth} className="payments"/>
                 </div>
             </div>

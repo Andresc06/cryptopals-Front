@@ -84,27 +84,24 @@ export function ChangePhone({setAuth}) {
         <div>
             <Sidebar show={show} setshow={setshow} user={user} />
             <div className="p-5 background-forgot">
-                <div className="card col-sm-6 so col-lg-3 p-3 mx-auto mt-5">
-                    <h1 className="text-center title">Change Phone Number</h1>
+                <div className="card-form change-form">
+                    <h3 className="text-center title-change">Change Phone Number</h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <label className="mt-3">Your new phone number</label>
                         
                         {errors.phone && (
-                        <span className="text-danger m-0 p-0 mess">
+                        <span className="text-danger m-0 p-0">
                             {errors.phone.message}
                         </span>
                         )}
 
                         <input className="form-control my-2" placeholder='+584240000000' {...register('phone')} name='phone' />
-                        
-                        
-                        
 
-                        <div className="d-grid col-9 position-absolute bottom-0 mb-4 start-50 translate-middle-x">
-                        <button className="btn btn-success fs-4">
-                        {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Change Phone Number"}
-                        </button>
+                        <div className="center-btn">
+                            <button className="btn btn-success fs-4 submit-btn">
+                            {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Change Phone Number"}
+                            </button>
                         </div>
                     </form>
                 </div>

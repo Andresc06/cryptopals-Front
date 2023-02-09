@@ -1,9 +1,13 @@
 #header {
-  height: 80px;
+  height: 10vh;
   background: linear-gradient(rgb(0, 0, 0), 10%, transparent);
 }
 
-#header .logo h1 {
+.navbar-nav a {
+  margin-left: 15px;
+}
+
+.logo h1 {
   margin: 0;
   padding: 4px 0;
   line-height: 1;
@@ -11,7 +15,7 @@
   text-transform: uppercase;
 }
 
-#header .logo h1 a:hover {
+.logo h1 a:hover {
   color: #28c6a9;
   text-decoration: none;
 }
@@ -20,41 +24,30 @@
   height:40px;
 }
 
-.navbar {
-  padding: 0;
-}
-
-.navbar a,
-.navbar a:focus {
-  display: flex;
+.navbar a{
   font-family: 'KoHo';
-  font-size: 17px;
+  font-size: 1rem;
   color: #fff;
-  transition: 0.3s;
 }
 
 .navbar-nav {
   flex-grow: 0;
 }
 
+.btn-navbar {
+  border-radius: 10px;
+  font-weight: bold;
+}
+
 @media (max-width: 992px) {
 
-  .navbar-nav button {
-    margin-top: 10px;
-    background-color: transparent;
-    border: transparent;
-  }
-
   .navbar-nav {
+    padding: 20px;
     margin-top: 12px;
   }
 
-  .container-fluid {
-    padding: 0px;
-  }
-
   #header {
-    height: 60px;
+    height: 65px;
   }
 
   .navbar-nav, #header {
@@ -65,8 +58,12 @@
 
 @media (min-width: 992px) {
 
-  .navbar-nav button {
-    margin: 0px 15px;
+  #btn-login {
+    background-color: #0d6efd;
+  }
+  
+  #btn-register {
+    background-color: #198754;
   }
   
 }

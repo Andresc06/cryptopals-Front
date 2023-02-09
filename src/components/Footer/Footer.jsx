@@ -36,7 +36,7 @@ const Footer = () => {
 	          </nav>
 	        </div>
 	      </div>
-	      <div class="text-center">&copy; Copyright Cryptopals 2021</div>
+	      <div class="text-center">&copy; Copyright Cryptopals 2022</div>
 	       
     	  </div>
     </footer>

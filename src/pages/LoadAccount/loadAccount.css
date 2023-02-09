@@ -1,25 +1,23 @@
 .background-load {
-    width: 100vw;
-    height: 100vh;
-    color: #fff;
-    font-family: 'Teko';
-    justify-content: center;
-    background: url(../../assets/background-load.jpg) no-repeat fixed center; background-size: cover;
-    position: relative;
-  }
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  font-family: 'Teko';
+  background: url(../../assets/background-load.jpg) no-repeat fixed center; background-size: cover;
+}
 
-  .background-load:before {
-    content:'';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    animation: pay 10s alternate infinite;
-  }
+.background-load:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: pay 10s alternate infinite;
+}
 
-  .load {
-    color: #FCF3CF;
-    font-style: italic;
-    text-shadow: #d7b300 2px 2px;
-  }
+.load {
+  color: #FCF3CF;
+  font-style: italic;
+  text-shadow: #d7b300 2px 2px;
+}
