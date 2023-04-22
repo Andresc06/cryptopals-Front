@@ -2,7 +2,7 @@
 
 This is one of the most interesting projects that I’ve done and that I’m proud of it. It’s about a completely functional Crypto Wallet that I called _"Cryptopals"_.
 In this project I really learned about teamwork with my friend Jose Salazar. Even though, it wasn’t easy to finish this amazing project due to the limited time
-that we had (less than two months), I really enjoyed the experience using the BINANCE API, and I have to say that I improved my skills as a Frontend Developer =.
+that we had (less than two months), I really enjoyed the experience using the BINANCE API, and I have to say that I improved my skills as a Frontend Developer.
 
 Link: https://cryptopals-wallet.netlify.app/
 
