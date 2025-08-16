@@ -4,6 +4,13 @@ This is one of the most interesting projects that I’ve done and that I’m pro
 In this project I really learned about teamwork with my friend Jose Salazar. Even though, it wasn’t easy to finish this amazing project due to the limited time
 that we had (less than two months), I really enjoyed the experience using the BINANCE API, and I have to say that I improved my skills as a Frontend Developer.
 
+### ⚠️ Important Notice:
+The core functionality of the Cryptopals frontend is fully operational. However, please note that user registration and wallet-related features are currently not functional due to two limitations:
+
+- The BINANCE API is restricted in the USA, preventing full integration for real-time crypto transactions.
+- The MongoDB database is currently offline, which affects login, account registration, and persistent data features.
+
+This project still showcases the complete frontend structure and all UI/UX functionality as designed and implemented.
 Link: https://cryptopals-wallet.netlify.app/
 
 ### Constructed with the following technologies
